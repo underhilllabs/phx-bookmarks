@@ -1,0 +1,8 @@
+<div class="bookmarks">
+  <h3>Bookmarker Users</h3>
+
+  <%= for user <- @users do %>
+    <%= render "user.html", user: user %>
+  <% end %>
+</div>
+
