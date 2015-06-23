@@ -1,0 +1,8 @@
+<div class="bookmarks">
+  <h3>Here are the Bookmarks</h3>
+
+  <%= for bookmark <- @bookmarks do %>
+    <%= render "bookmark.html", bookmark: bookmark %>
+  <% end %>
+</div>
+
