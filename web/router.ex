@@ -19,6 +19,7 @@ defmodule PhxBkmark.Router do
     get "/bookmarks", BookmarkController, :index
     get "/bookmarks/new", BookmarkController, :new
     post "/bookmarks/new", BookmarkController, :create
+    get "/users/:id", UserController, :index
   end
 
   # Other scopes may use custom stacks.
