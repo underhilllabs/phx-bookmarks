@@ -6,10 +6,12 @@ defmodule PhxBkmark.BookmarkController do
 
   def index(conn, _params) do
     query = from b in PhxBkmark.Bookmark,
+      order_by: [desc: b.updated_at],
       limit: 30,
+      offset: 300,
       select: b
 
-    bookmarks = Repo.all(query) |> Repo.preload [:user]
+    bookmarks = Repo.all(query) |> Repo.preload [:user, :tags] 
     render(conn, "index.html", bookmarks: bookmarks)
   end
 
