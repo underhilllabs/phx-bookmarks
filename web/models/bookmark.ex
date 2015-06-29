@@ -8,6 +8,7 @@ defmodule PhxBkmark.Bookmark do
     field :private, :boolean
     
     belongs_to :user, PhxBkmark.User, foreign_key: :user_id
+    has_many :tags, PhxBkmark.Tag
     timestamps
   end
 

@@ -10,6 +10,7 @@ defmodule PhxBkmark.User do
     field :pic_url, :string
     
     has_many :bookmarks, PhxBkmark.Bookmark
+    has_many :tags, PhxBkmark.Tag
     timestamps
   end
 
