@@ -1,4 +1,4 @@
 <div class="user-listing">
-  <a href="users/<%=@user.id %>"><%=@user.username %></a>
+  <a href="/users/<%=@user.id %>"><%=@user.username %></a>
   <div class="user-details"><%= @user.email %></div>
 </div>
