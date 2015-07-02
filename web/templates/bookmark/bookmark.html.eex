@@ -1,5 +1,6 @@
 <div class="bookmark-listing">
   <a href="<%=@bookmark.url %>"><%=@bookmark.title %></a>
+  <div class="bookmark-tags"><%= Enum.map_join(@bookmark.tags, ", ", &(&1.name)) %></div>
   <div class="bookmark-details">
   created on: <%=@bookmark.inserted_at %> by <a href="/users/<%=@bookmark.user.id %>"><%= @bookmark.user.username %></a>
 </div>
