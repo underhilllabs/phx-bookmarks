@@ -1,0 +1,7 @@
+<div class="user-listing">
+  <a href="users/<%=@user.id %>"><%=@user.username %></a>
+  <div class="user-details"><%= @user.email %></div>
+  Name: <%= @user.fullname %>
+  Website: <%= @user.website %>
+
+</div>
