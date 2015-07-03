@@ -15,7 +15,7 @@ defmodule PhxBkmark.Router do
   scope "/", PhxBkmark do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", BookmarkController, :index
     get "/bookmarks", BookmarkController, :index
     get "/bookmarks/new", BookmarkController, :new
     post "/bookmarks/new", BookmarkController, :create
