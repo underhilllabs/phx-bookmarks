@@ -4,12 +4,8 @@ defmodule PhxBkmark.BookmarkController do
   @per_page 20
   plug :action
 
-  def index(conn, %{"page" => page}) do
-    if page do
-      page = String.to_integer(page)
-    else
-      page = 1
-    end
+  def index(conn, params) do
+    page = Map.get(params, "page", "1") |> String.to_integer
     
     bookmarks = bookmark_query |> paginate(page, @per_page) |> Repo.all |> Repo.preload [:user, :tags]
     render(conn, "index.html", bookmarks: bookmarks)
