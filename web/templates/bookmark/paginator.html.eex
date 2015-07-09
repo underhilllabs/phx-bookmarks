@@ -1,0 +1,5 @@
+<div class="paginator">
+  <span class="previous"><a href=""><<</a></span>
+  <span class="current"><%=@page %></span>
+  <span class="previous"><a href="">>></a></span>
+</div>

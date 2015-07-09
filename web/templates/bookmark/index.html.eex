@@ -6,3 +6,6 @@
   <% end %>
 </div>
 
+<div class="footer">
+  <%= render "paginator.html", page: @page %>
+</div>

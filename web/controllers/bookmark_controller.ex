@@ -6,9 +6,10 @@ defmodule PhxBkmark.BookmarkController do
 
   def index(conn, params) do
     page = Map.get(params, "page", "1") |> String.to_integer
+    last_page = bookmark_count_query |> Repo.get  
     
     bookmarks = bookmark_query |> paginate(page, @per_page) |> Repo.all |> Repo.preload [:user, :tags]
-    render(conn, "index.html", bookmarks: bookmarks)
+    render(conn, "index.html", bookmarks: bookmarks, page: page)
   end
 
   def new(conn, _params) do
@@ -20,6 +21,11 @@ defmodule PhxBkmark.BookmarkController do
     render conn, "index.html"
   end
 
+  def bookmark_count_query do
+    from b in PhxBkmark.Bookmark,
+    order_by: [desc: b.updated_at],
+    select: b
+  end
   def bookmark_query do
     from b in PhxBkmark.Bookmark,
     order_by: [desc: b.updated_at],
