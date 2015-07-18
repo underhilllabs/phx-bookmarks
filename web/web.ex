@@ -31,6 +31,8 @@ defmodule PhxBkmark.Web do
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
+      alias PhxBkmark.User
+
       # Import URL helpers from the router
       import PhxBkmark.Router.Helpers
     end
