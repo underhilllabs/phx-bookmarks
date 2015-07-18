@@ -8,6 +8,10 @@ defmodule PhxBkmark.SessionController do
     render conn, changeset: changeset
   end
 
+  def create(conn, params) do
+    render conn, "index.html"
+  end
+
   def register(conn, _params) do
     render conn, "register.html"
   end
